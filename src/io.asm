@@ -37,4 +37,22 @@ sprint:
 	pop eax
 	ret
 
+input:
+	push edx 
+	push ecx
+	push ebx
+	push eax
 
+	mov edx , 4
+	mov ecx , esp
+	mov ebx , 0
+	mov eax , 3
+
+	int 80h
+
+
+	pop eax
+	pop ebx
+	pop ecx
+	pop edx
+	ret
