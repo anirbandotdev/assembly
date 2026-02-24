@@ -14,7 +14,25 @@ done:
 	ret
 
 print:
+	push edx
+	push ecx
+	push ebx
+	push eax
+	call strlen
 
+	mov edx , eax
+
+	pop eax
+
+	mov ecx , eax
+	mov ebx , 1
+	mov eax , 4
+	int 80h
+
+	pop ebx
+	pop ecx
+	pop edx
+	ret 
 
 sprint:
 
