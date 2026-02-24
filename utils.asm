@@ -14,6 +14,7 @@ done:
 	ret
 
 print:
+	; print without a newline
 	push edx
 	push ecx
 	push ebx
@@ -35,6 +36,20 @@ print:
 	ret 
 
 sprint:
+	; print with a newline
+	call print
+	push eax
+
+	mov eax , 0Ah
+	push eax
+
+	mov eax , esp
+	call print
+	
+	pop eax
+	pop eax
+	ret
+
 
 
 quit:
