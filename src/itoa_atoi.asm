@@ -30,4 +30,29 @@ print_digits:
 
 
 atoi:
+    push esi
+    push ecx
+
+    mov esi, eax     
+    xor ecx, ecx    
+
+convert_loop:
+    movzx eax, byte [esi] 
+    cmp eax, 0
+    je finished
+
+    sub eax, '0'         
+
+    imul ecx, ecx, 10   
+    add ecx, eax       
+
+    inc esi
+    jmp convert_loop
+
+finished:
+    mov eax, ecx      
+
+    pop ecx
+    pop esi
+    ret
 	
